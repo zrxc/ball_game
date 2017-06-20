@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script type="text/javascript">
+	//人类
+	function Person (name, age, sex){
+		this.name = name;
+		this.age = age;
+		this.sex = sex
+	}
+	Person.prototype.eat = function(){
+		console.log('Person 正在吃饭');
+	}
+	// 小学生类
+	function Student (name, age, sex, lolLevel){
+		this.name = name;
+		this.age = age;
+		this.sex = sex;
+		this.lolLevel = lolLevel;
+	}
+	Student.prototype.eat = function (){
+		console.log('Person 正在吃饭');
+	}
+	Student.prototype.lol = function (){
+		console.log('Person 正在吃饭');
+	}
+
+	//继承
+	// function People (){
+	// 	// this.age = 18;
+	// }
+	// People.prototype.age = 19;
+	// var liyangming = new People();
+	// // liyangming.age = 17;
+	// function Student (){
+	// 	// this.age = 16;
+	// }
+	// Student.prototype = liyangming;
+	// // Student.prototype.age = 15;
+	// var huangwei = new Student();
+	// // huangwei.age = 14;
+	// console.log(huangwei.age);
+	
+
+	function People (){
+		this.name = '李阳明';
+		this.age = 22;
+		this.sex = '男'
+		this.lol = '白金'
+	}
+
+	var who = new People();
+	who.lol = '黄金'
+
+	function Student (){
+		// this.lol = '最强王者';
+	}
+	Student.prototype = who;
+	var zhangrui = new Student ();
+	Student.prototype.lol = '青铜';
+	
+	console.log(zhangrui.age);
+	console.log(zhangrui.name);
+	console.log(zhangrui.lol);
+	console.log(zhangrui.sex);
+	console.log(who.lol);
+
+
+
+
+	// function People(name, age, sex) {
+	// 	this.name = name;
+	// 	this.age = age;
+	// 	this.sex = sex;
+	// }
+	// People.prototype.sayHello = function() {
+	// 	console.log("My name is " + this.name);
+	// }
+	// People.prototype.eat = function() {
+	// 	console.log('I\'m eating');
+	// }
+	// function Student(name, age, sex, id) {
+	// 	//子类调用父类的方法；并且修改方法中的那个this为我们当前函数中的this
+	// 	this.constructor.apply(this, arguments);
+	// 	this.id = id;
+	// }
+	// //这种继承方式修改子类的原型，父类的也跟着修改了
+	// Student.prototype = People.prototype;
+	// // Student.prototype.sayHello = function() {
+	// // 	console.log('我在北京第一小学，我叫' + this.name);
+	// // }
+	// var changkun = new Student('常坤', 7, '男', '皮皮虾');
+	// console.log(changkun.name);
+	// console.log(changkun.id);
+	// changkun.sayHello();
+	
+</script>
+</html>
