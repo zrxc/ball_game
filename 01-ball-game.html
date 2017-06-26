@@ -96,12 +96,7 @@
         document.onmousemove = function(event){
           event = event || window.event;
           self.left = event.clientX;
-          if (self.left < 0) {
-            self.left = 0;
-          }
-          if (self.left > width - self.width) {
-            self.left = width - self.width;
-          }
+          
           self.render();
         }
       }
